@@ -13,6 +13,8 @@ var mysql = require('mysql');
 
 // -----------------------------------
 
+var VERSION = '1.0.0';
+
 var DOWNLOAD_DIR = './downloads/';
 var GEONAMES_URL_PREFIX = 'http://download.geonames.org/export/zip/';
 
@@ -124,7 +126,7 @@ function download_unzip_insert(key, readyCallback) {
 // -----------------------------------
 
 program
-  .version('0.0.1')
+  .version(VERSION)
   .option('-h, --host [host]', 'DB Host')
   .option('-u, --user [user]', 'DB User')
   .option('-p, --password [password]', 'DB Password')

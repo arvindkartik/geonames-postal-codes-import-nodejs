@@ -1,9 +1,9 @@
 geonames-postal-codes-import-nodejs
 ===================================
 
-Using [Node.js](http://nodejs.org) to import Postal Codes from [GeoNames.org](http://www.geonames.org) into a database. 
+Using [Node.js](http://nodejs.org) to import Postal Codes from [GeoNames.org](http://www.geonames.org) into a database. See http://download.geonames.org/export/zip/ for a complete list of available postal codes. 
 
-Currently, only mysql is supported. Please adapt ````dbConnect````, ````dbCreateTable````, ````dbDeleteTable```` and ````dbInsert```` in ````index.js```` to support other databases.
+Currently, only mysql is supported. Please adapt functions ````dbConnect()````, ````dbCreateTable()````, ````dbDeleteTable()```` and ````dbInsert()```` in ````index.js```` to support other databases.
 
 
 Installation
