@@ -5,6 +5,8 @@ Using [Node.js](http://nodejs.org) to import Postal Codes from [GeoNames.org](ht
 
 Currently, only mysql is supported. Please adapt functions ````dbConnect()````, ````dbCreateTable()````, ````dbDeleteTable()```` and ````dbInsert()```` in ````index.js```` to support other databases.
 
+Unlike other tools, this tool only requires Node.js and no other libraries.
+
 
 Installation
 ------------
