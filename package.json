@@ -1,0 +1,34 @@
+{
+  "name": "geonames-postal-codes-import-nodejs",
+  "version": "1.0.0",
+  "description": "Import Postal Codes from GeoNames.org into a database",
+  "homepage" : "https://github.com/mattes/geonames-postal-codes-import-nodejs",
+  "main": "index.js",
+  "dependencies": {
+    "adm-zip": "~0.1.9",
+    "async": "~0.2.2",
+    "byline": "~2.0.3",
+    "commander": "~1.1.1",
+    "mysql": "~2.0.0-alpha7",
+    "progress": "~0.1.0"
+  },
+  "bugs" : {
+    "url" : "https://github.com/mattes/geonames-postal-codes-import-nodejs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattes/geonames-postal-codes-import-nodejs.git"
+  },
+  "keywords": [
+    "geonames",
+    "postal",
+    "code",
+    "geo",
+    "import",
+    "database",
+    "locations",
+    "cities"
+  ],
+  "author": "Matthias Kadenbach <matthias.kadenbach@gmail.com> (https://github.com/mattes)",
+  "license": "MIT"
+}
