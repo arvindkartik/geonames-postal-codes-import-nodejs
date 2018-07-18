@@ -93,6 +93,7 @@ function insertRecordsForFile(file, readyCallback) {
     countLines++;
 
     var values = line.split('\t');
+    values.push("GeomFromText('POINT(" + values[9] + "," + values[10] + ")')");
     dbInsert(values, function() {
       countInserts++;
 
@@ -205,8 +206,11 @@ function dbCreateTable(readyCallback) {
             'admin_code3 VARCHAR(20) DEFAULT NULL, ' +
             'latitude VARCHAR(255) DEFAULT NULL, ' +
             'longitude VARCHAR(255) DEFAULT NULL, ' +
-            'accuracy VARCHAR(255) DEFAULT NULL ' +
-            ') ENGINE=InnoDB DEFAULT CHARSET=utf8'
+            'accuracy VARCHAR(255) DEFAULT NULL, ' +
+            'geometry geometry DEFAULT NULL '
+            ') ENGINE=MyISAM DEFAULT CHARSET=utf8; ' +
+            'ALTER TABLE ' + program.table + ' ' +
+            'ADD SPATIAL KEY geometry (geometry);'
             ;
   connection.query(sql, function(error, results){
     if(error) {
@@ -230,8 +234,8 @@ function dbDeleteTable(readyCallback) {
 
 function dbInsert(values, successCallback) {
   connection.query('INSERT INTO ' + program.table + 
-    ' (country_code, postal_code, place_name, admin_name1, admin_code1, admin_name2, admin_code2, admin_name3, admin_code3, latitude, longitude, accuracy)' +
-    ' VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', values, function(error, results){
+    ' (country_code, postal_code, place_name, admin_name1, admin_code1, admin_name2, admin_code2, admin_name3, admin_code3, latitude, longitude, accuracy, geometry)' +
+    ' VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', values, function(error, results){
     if(error) {
       util.error(error);
       process.exit(1);
